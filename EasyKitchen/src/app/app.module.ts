@@ -10,6 +10,7 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
 import { MexicanaComponent } from './Component/mexicana/mexicana.component';
 import { JaponesaComponent } from './Component/japonesa/japonesa.component';
 import { ErrorComponent } from './Component/error/error.component';
+import { ChilesComponent } from './Component/mexicanas/chiles/chiles.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorComponent } from './Component/error/error.component';
     NavbarComponent,
     MexicanaComponent,
     JaponesaComponent,
-    ErrorComponent
+    ErrorComponent,
+    ChilesComponent
   ],
   imports: [
     BrowserModule,
