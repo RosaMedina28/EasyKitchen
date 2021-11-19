@@ -10,6 +10,7 @@ import { NavbarComponent } from './Component/navbar/navbar.component';
 import { RegistroComponent } from './Component/registro/registro.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},
   {path:'inicio', component:InicioComponent},
