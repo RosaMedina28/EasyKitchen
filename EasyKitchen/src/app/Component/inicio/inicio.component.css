@@ -11,7 +11,7 @@
 
 .fondo {
     background-image: url(../../../assets/imagenes/fondo-principal2.png);
-    background-size: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
