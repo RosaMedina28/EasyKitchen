@@ -1,4 +1,5 @@
 .background {
+   
     background-repeat: no-repeat;
     background-image: url("../../../../assets/imagenes/q.jpg");
     min-height: 100%;
@@ -7,7 +8,7 @@
     width: 100%;
     height: auto;
     /* Posicionamiento */
-    position: fixed;
+    position: containt;
     top: 0;
     left: 0;
 }
