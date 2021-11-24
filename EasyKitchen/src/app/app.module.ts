@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { JaponesaComponent } from './Component/japonesa/japonesa.component';
 import { ErrorComponent } from './Component/error/error.component';
 import { ChilesComponent } from './Component/mexicanas/chiles/chiles.component';
 import { ArrozComponent } from './Component/mexicanas/arroz/arroz.component';
+import { PerfilComponent } from './Component/perfil/perfil.component';
+import { CardRecetaComponent } from './Component/card-receta/card-receta.component';
+
 
 @NgModule({
   declarations: [
@@ -24,11 +28,14 @@ import { ArrozComponent } from './Component/mexicanas/arroz/arroz.component';
     JaponesaComponent,
     ErrorComponent,
     ChilesComponent,
-    ArrozComponent
+    ArrozComponent,
+    PerfilComponent,
+    CardRecetaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
