@@ -6,8 +6,7 @@ import { JaponesaComponent } from './Component/japonesa/japonesa.component';
 import { LoginComponent } from './Component/login/login.component';
 import { MexicanaComponent } from './Component/mexicana/mexicana.component';
 import { ChilesComponent } from './Component/mexicanas/chiles/chiles.component';
-import { NavVerticalComponent } from './Component/nav-vertical/nav-vertical.component';
-import { NavbarComponent } from './Component/navbar/navbar.component';
+import { PerfilComponent } from './Component/perfil/perfil.component';
 import { RegistroComponent } from './Component/registro/registro.component';
 
 const routes: Routes = [
@@ -15,8 +14,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},
   {path:'inicio', component:InicioComponent},
-  {path:'navbar', component:NavbarComponent},
-  {path:'nav', component:NavVerticalComponent},
+  {path:'perfil', component:PerfilComponent},
   {path:'mexicana', component:MexicanaComponent},
   {path:'japonesa', component:JaponesaComponent},
   {path:'chiles', component:ChilesComponent},
