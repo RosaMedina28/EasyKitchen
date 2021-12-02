@@ -12,13 +12,23 @@ import { environment } from 'src/environments/environment.prod';
 export class LoginComponent implements OnInit {
   request: Object
   formLogin: FormGroup;
+  email: string;
+  password: string;
 
   constructor(private fb:FormBuilder, private api: ApiService, public router: Router) {
     this.crForm();
   }
 
   ngOnInit(): void {
+    
   }
+
+  /* Form validation and setting */
+  setLogin() {
+    this.email = this.formLogin.get('email').value
+    this.password = this.formLogin.get('password').value
+    }
+
 
   login() {
     this.setLogin();
@@ -52,13 +62,6 @@ export class LoginComponent implements OnInit {
     });
   }
   
-  //Setear adtos del formulario
-  setLogin() {
-    this.request = {
-      email: this.formLogin.get('email').value,
-      password: this.formLogin.get('password').value
-    }
-  }
 
     //Validor Formulario
   crForm(): void {
