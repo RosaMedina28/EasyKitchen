@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 export class ApiService {
   apiURL = environment.ApiUrl;
   
-  constructor(private http: HttpClient, private cookies: CookieService) {}
+  constructor(private http: HttpClient) {}
 
   //Iniciar Sesion
   login(request: Object):Observable<any>{
@@ -23,6 +23,23 @@ export class ApiService {
     return this.http.post<any>(`${this.apiURL}register`, request)
   }
 
+  //Actualizar
+  actualizar(request: Object):Observable<any>{
+    return this.http.post<any>(`${this.apiURL}update/user`, request)
+  }
+
+  //Check
+  check():Observable<any>{
+    return this.http.get<any>(`${this.apiURL}check`)
+  }
+
+  //Check
+  logout():Observable<any>{
+    return this.http.get<any>(`${this.apiURL}logout`)
+  }
+
+
+
   //Recetas
   Recetas(request:Object):Observable<any>{
     return this.http.post<any>(`${this.apiURL}recipes`,request)
@@ -30,7 +47,7 @@ export class ApiService {
 
 
   //Cookies
-  setToken(token) {
+  /* setToken(token) {
     this.cookies.set("token", token);
   }
   
@@ -44,6 +61,6 @@ export class ApiService {
 
   DeleteToken() {
     this.cookies.delete("token");
-  }
+  } */
 
 }

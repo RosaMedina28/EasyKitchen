@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  public session: Boolean;
+  public nombre: String;
+  constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    this.sessionisactive()
+  }
+
+  sessionisactive(){
+    if(localStorage.getItem("TOKEN")){
+      console.log("existe")
+      this.api.check().subscribe(data => {
+        this.session = true
+        this.nombre = localStorage.getItem("USER_NAME")
+      }, error =>{
+        
+      });
+      
+    }else{
+      console.log("no existe")
+      this.session = false
+    }
   }
 
 }

@@ -1,39 +1,33 @@
-<section class="background" ><br>
-   <div class="offset-md-4 container" >
-      <div class="row">
-       <div class=" mx-auto">
-       <div id="first">
-          <div class="myform form ">
-              <div class="logo">
-                      <img src="../../../assets/imagenes/logonegro.png" class="card-img-top" width="250px">
-          
-                
-             </div>
-                 <form action="" method="post" name="login">
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Correo</label>
-                            <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                         </div>
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Contraseña</label>
-                            <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
-                         </div>
+<div class="background ">
+   <br>
+   <div class="container">
+      <div class="row justify-content-center " >
+         <div class="col-lg-8 justify-content-center" style="background-color:white; border-radius: 20px; ">
             
-                         <div class="text-center ">
-                            <button type="submit" class=" btn btn-block mybtn btn-warning tx-tfm">Login</button>
-                         </div>
-                         <div class="col-md-12">
-                            <div class="login-or">
-                            <p class="text-center"> <a href="#" id="signup">Registrarme</a></p>
-                         </div>
-                         </div>
-                      </form>
-                      </div>
-               
-          </div>
-       </div>
-       </div>
+            <div class="offset-lg-2 col-lg-8 justify-content-center">
+               <img src="../../../assets/imagenes/logonegro.png" class="card-img-top" width="40px" alt="">
+      
+               <form [formGroup]="formLogin" (submit)="login()" autocomplete="on">
+                  <div class="form-group">
+                     <label>Correo</label>
+                     <input type="email" name="email" id="email" formControlName="email"  class="form-control"  placeholder="Ingrese su correo" required>
+                  </div>
+                  <div class="form-group">
+                     <label>Contraseña</label>
+                     <input type="password" name="password" id="password" formControlName="password"  class="form-control"  placeholder="Ingrese su contraseña" required>
+                  </div>
+                  <div class="form-group">
+                     <button type="submit" class=" btn btn-block mybtn bg-yellow tx-tfm">Iniciar sesion</button>
+                  </div>
+                  <div class="form-group text-center">
+                     <a class="text-black link" routerLink="/registro">¿No tienes una cuenta?</a><br>
+                     <a class="text-black link" routerLink="/registro"><b>Registrarme</b></a>
+                  </div>
+      
+               </form>
+            </div>
+         </div>
+      </div>
    </div>
-</section>
-
-
+   <br>
+</div>

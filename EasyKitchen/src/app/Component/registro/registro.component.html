@@ -1,48 +1,37 @@
-<div class="background"></div>
-<body>
-    <div class="container" >
-        <div class="row">
-			<div class="col-md-5 mx-auto">
-			<div id="first">
-				<div class="myform form ">
-					 <div class="logo mb-3">
-                        <img src="../../../assets/imagenes/logonegro.png" class="card-img-top" width="300px" alt="">
-					</div>
-                   <form action="" method="post" name="login">
-                           <div class="form-group">
-                              <label for="exampleInputEmail1">Nombre</label>
-                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
-                           </div>
-                           <div class="form-group">
-                              <label for="exampleInputEmail1">Correo</label>
-                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Ingrese su correo">
-                           </div>
-                           <div class="form-group">
-                            <label for="exampleInputEmail1">Contraseña</label>
-                            <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
-                         </div>
-                           <div class="col-md-12 text-center mybtn">
-                              <button type="submit" class=" btn btn-block mybtn btn-warning tx-tfm">Registrarme</button>
-                           </div>
-                           <br>
-                           <div class="col-md-12">
-                               <p class="text-center"><a href="#" id="iniciar">¿Ya tienes una cuenta?</a> </p>
-                           </div>
-                           <div class="col-md-12 ">
-                              <div class="login-or">
-                                 <hr class="hr-or">
-                              <p class="text-center"> <a href="#" id="signup">Iniciar Sesión</a></p>
-                           </div>
-                           </div>
-                           
-                        </form>
-                        </div>
-         	</div>
-			</div>
-			</div>
-		</div>
- 
-         
-</body>
-  
-
+<div class="background ">
+   <br>
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-8 justify-content-center" style="background-color:white; border-radius: 20px; ">
+            
+            <div class="offset-lg-2 col-lg-8 justify-content-center">
+               <img src="../../../assets/imagenes/logonegro.png" class="card-img-top" width="40px" alt="">
+      
+               <form [formGroup]="formRegistro" (submit)="register()">
+                  <div class="form-group">
+                     <label>Nombre</label>
+                     <input type="nombre" name="nombre" id="email" formControlName="nombre"  class="form-control" placeholder="Ingrese su nombre" required>
+                  </div>
+                  <div class="form-group">
+                     <label>Correo</label>
+                     <input type="email" name="email" id="email" formControlName="email"  class="form-control" placeholder="Ingrese su correo">
+                  </div>
+                  <div class="form-group">
+                     <label>Contraseña</label>
+                     <input type="password" name="password" id="password" formControlName="password"  class="form-control" placeholder="Ingrese su contraseña">
+                  </div>
+                  <div class="form-group">
+                     <button type="submit" class=" btn btn-block mybtn bg-yellow tx-tfm">Registrarme</button>
+                  </div>
+                  <div class="form-group text-center">
+                     <a class="text-black link" routerLink="/iniciarsesion">¿Ya tienes una cuenta?</a><br>
+                     <a class="text-black link" routerLink="/iniciarsesion"><b>Inicia sesion</b></a>
+                  </div>
+      
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <br>
+</div>

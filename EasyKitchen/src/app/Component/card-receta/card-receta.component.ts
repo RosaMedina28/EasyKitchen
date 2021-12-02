@@ -8,9 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class CardRecetaComponent implements OnInit {
   
-  public Nombre:String
-  public Ihmagen:String
-
+  public nombre:String
+  public imagen:String
+  public pais:String
+  
   constructor() { }
 
   ngOnInit(): void {
