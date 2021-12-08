@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { Receta } from 'src/app/Interfaces/receta';
 import { environment } from 'src/environments/environment.prod';
 import { LoginComponent } from '../login/login.component';
 
@@ -12,10 +13,12 @@ import { LoginComponent } from '../login/login.component';
 export class MexicanaComponent implements OnInit {
 
   public session: Boolean;
+  public recetas:Array<Receta>
   constructor(private router: Router,private api:ApiService) { }
 
   ngOnInit(): void {
     this.sessionisactive()
+    this.peticionRecetas()
   }
 
   cerrarSesion(){
@@ -43,6 +46,18 @@ export class MexicanaComponent implements OnInit {
       console.log("no existe")
       this.session = false
     }
+  }
+
+  peticionRecetas(){
+    const request = {pais: "chinas"}
+    this.api.recetas(request).subscribe(data => {
+      console.log("Realizado peticion recetas")
+      this.recetas = data.recetas
+      console.log(data)
+    }, error =>{
+      console.log("Error peticion recetas")
+      console.log(error)
+    });
   }
 
 }

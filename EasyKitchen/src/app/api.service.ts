@@ -23,6 +23,11 @@ export class ApiService {
     return this.http.post<any>(`${this.apiURL}register`, request)
   }
 
+  //Recetas
+  recetas(request: Object):Observable<any>{
+    return this.http.post<any>(`${this.apiURL}recetas`, request)
+  }
+
   //Actualizar
   actualizar(request: Object):Observable<any>{
     return this.http.post<any>(`${this.apiURL}update/user`, request)
@@ -36,13 +41,6 @@ export class ApiService {
   //Check
   logout():Observable<any>{
     return this.http.get<any>(`${this.apiURL}logout`)
-  }
-
-
-
-  //Recetas
-  Recetas(request:Object):Observable<any>{
-    return this.http.post<any>(`${this.apiURL}recipes`,request)
   }
 
 

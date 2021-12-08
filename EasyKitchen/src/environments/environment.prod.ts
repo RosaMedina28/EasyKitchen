@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  ApiUrl: ' http://127.0.0.1:8000/api/',
+  ApiUrl: 'https://api.easykitchen.one/',
   token:null
 };
